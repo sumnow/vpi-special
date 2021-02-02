@@ -157,12 +157,12 @@ class Paster {
         }
         this.getImagePath(filePath, selectText, this.folderPathConfig, this.showFilePathConfirmInputBox, this.filePathConfirmInputBoxMode, function (err, imagePath) {
             try {
-                const le = imagePath.lastIndexOf('/') + 9;
+                const l = imagePath.match(/\d{9}/g)[0]
+                const le = imagePath.lastIndexOf('/') + 1;
                 let _img = imagePath.slice(0, le);
                 let num = 0;
                 num++;
-                let _i = _img + padFromStart(num.toString(), 3) + '.png'
-                console.log(123, _i,le)
+                let _i = _img + l + padFromStart(num.toString(), 3) + '.png'
                 // let existed = fs.existsSync(_i);
                 while (fs.existsSync(_i)) {
                     num++;

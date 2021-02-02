@@ -2,7 +2,7 @@
   "name": "vpi-special",
   "displayName": "Paste Image",
   "description": "paste image from clipboard directly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "mervin",
   "repository": {
     "type": "git",
