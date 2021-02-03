@@ -157,16 +157,18 @@ class Paster {
         }
         this.getImagePath(filePath, selectText, this.folderPathConfig, this.showFilePathConfirmInputBox, this.filePathConfirmInputBoxMode, function (err, imagePath) {
             try {
-                const l = imagePath.match(/\d{9}/g)[0]
-                const le = imagePath.lastIndexOf('/') + 1;
+                const l = imagePath.match(/202\d{6}/g)[0]
+                const le = imagePath.lastIndexOf('img/') + 4;
                 let _img = imagePath.slice(0, le);
                 let num = 0;
+                console.log(imagePath,l,_img)
+                
                 num++;
                 let _i = _img + l + padFromStart(num.toString(), 3) + '.png'
                 // let existed = fs.existsSync(_i);
                 while (fs.existsSync(_i)) {
                     num++;
-                    _i = _img + padFromStart(num.toString(), 3) + '.png'
+                    _i =  _img + l + padFromStart(num.toString(), 3) + '.png'
                 }
                 // is the file existed?
 
