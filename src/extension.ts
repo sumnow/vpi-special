@@ -157,11 +157,10 @@ class Paster {
         }
         this.getImagePath(filePath, selectText, this.folderPathConfig, this.showFilePathConfirmInputBox, this.filePathConfirmInputBoxMode, function (err, imagePath) {
             try {
-                const l = imagePath.match(/202\d{6}/g)[0]
+                const l = imagePath.match(/20\d{7}/g)[0]
                 const le = imagePath.lastIndexOf('img/') + 4;
                 let _img = imagePath.slice(0, le);
                 let num = 0;
-                console.log(imagePath,l,_img)
                 
                 num++;
                 let _i = _img + l + padFromStart(num.toString(), 3) + '.png'
